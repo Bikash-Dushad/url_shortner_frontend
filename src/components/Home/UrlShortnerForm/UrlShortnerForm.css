@@ -1,0 +1,85 @@
+.url-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 25px;
+  background: #161513;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.url-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.url-input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  outline: none;
+  transition: 0.2s;
+}
+
+.url-input:focus {
+  border-color: #ff6b00;
+}
+
+.submit-btn {
+  padding: 12px;
+  background: linear-gradient(135deg, #ff6b00, #ff8c42);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 14px;
+  text-align: center;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 12px;
+  background: #222;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.result-link {
+  color: #4dabf7;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+.result-link:hover {
+  text-decoration: underline;
+}
