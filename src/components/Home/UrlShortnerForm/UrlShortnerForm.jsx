@@ -2,7 +2,7 @@ import { useState } from "react";
 import { postData } from "../../../api/apiService";
 import "./UrlShortnerForm.css";
 
-const UrlShortnerForm = () => {
+const UrlShortnerForm = ({ isAuthenticated }) => {
   const [longUrl, setLongUrl] = useState("");
   const [customName, setCustomName] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -29,6 +29,12 @@ const UrlShortnerForm = () => {
       const response = await postData("/short-url", payload);
       if (response?.responseCode === 200) {
         setShortUrl(response.data.shortUrl);
+        if (!isAuthenticated) {
+          const existingUrls =
+            JSON.parse(localStorage.getItem("shortUrls")) || [];
+          const updatedUrls = [...existingUrls, response.data.shortUrl];
+          localStorage.setItem("shortUrls", JSON.stringify(updatedUrls));
+        }
         setLongUrl("");
         setCustomName("");
       }
