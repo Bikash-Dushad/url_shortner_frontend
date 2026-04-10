@@ -1,0 +1,397 @@
+/* Signup.css — matches Navbar & UrlShortenerForm token system */
+
+/* ── Tokens ───────────────────────────────────────────── */
+:root {
+  --su-bg:            #0f0e0d;
+  --su-card:          #161513;
+  --su-surface:       #1e1c1a;
+  --su-border:        rgba(255, 255, 255, 0.08);
+  --su-accent:        #ff6b00;
+  --su-accent-hover:  #ff8533;
+  --su-accent-subtle: rgba(255, 107, 0, 0.1);
+  --su-text:          #f0ece8;
+  --su-muted:         #8a8380;
+  --su-error:         #f87171;
+  --su-error-bg:      rgba(248, 113, 113, 0.08);
+  --su-success:       #4ade80;
+  --su-success-bg:    rgba(74, 222, 128, 0.08);
+  --su-ok-border:     rgba(74, 222, 128, 0.35);
+  --su-radius-sm:     7px;
+  --su-radius-md:     11px;
+  --su-radius-lg:     18px;
+  --su-font:          "DM Sans", "Outfit", system-ui, sans-serif;
+  --su-transition:    0.17s ease;
+}
+
+/* ── Page ─────────────────────────────────────────────── */
+.su-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family: var(--su-font);
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.su-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--su-card);
+  border: 1px solid var(--su-border);
+  border-radius: var(--su-radius-lg);
+  padding: 36px 32px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Brand ────────────────────────────────────────────── */
+.su-brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.su-brand__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--su-text);
+  letter-spacing: -0.02em;
+}
+
+.su-brand__logo span:not(.su-brand__icon) {
+  color: var(--su-accent);
+}
+
+.su-brand__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--su-accent-subtle);
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  border-radius: 8px;
+  color: var(--su-accent);
+}
+
+/* ── Headings ─────────────────────────────────────────── */
+.su-title {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--su-text);
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.su-subtitle {
+  margin: 0 0 24px;
+  font-size: 0.84rem;
+  color: var(--su-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Avatar ───────────────────────────────────────────── */
+.su-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.su-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--su-surface);
+  border: 2px dashed var(--su-border);
+  cursor: pointer;
+  transition: border-color var(--su-transition), background var(--su-transition);
+  overflow: visible;
+}
+
+.su-avatar:hover {
+  border-color: var(--su-accent);
+  background: var(--su-accent-subtle);
+}
+
+.su-avatar__img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--su-accent);
+}
+
+.su-avatar__placeholder {
+  color: var(--su-muted);
+}
+
+.su-avatar__badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--su-accent);
+  border: 2px solid var(--su-card);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.su-avatar__file {
+  display: none;
+}
+
+.su-avatar__hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--su-muted);
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.su-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Field ────────────────────────────────────────────── */
+.su-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.su-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--su-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Input wrapper ────────────────────────────────────── */
+.su-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.su-input-icon {
+  position: absolute;
+  left: 13px;
+  color: var(--su-muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.su-input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  background: var(--su-surface);
+  border: 1px solid var(--su-border);
+  border-radius: var(--su-radius-sm);
+  color: var(--su-text);
+  font-size: 0.9rem;
+  font-family: var(--su-font);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color var(--su-transition), box-shadow var(--su-transition);
+}
+
+.su-input::placeholder {
+  color: var(--su-muted);
+  opacity: 0.5;
+}
+
+.su-input:focus {
+  border-color: var(--su-accent);
+  box-shadow: 0 0 0 3px var(--su-accent-subtle);
+}
+
+/* when there's a toggle button, add right padding */
+.su-input-wrap:has(.su-input-toggle) .su-input {
+  padding-right: 40px;
+}
+
+.su-input--error {
+  border-color: var(--su-error) !important;
+  box-shadow: 0 0 0 3px var(--su-error-bg) !important;
+}
+
+.su-input--ok {
+  border-color: rgba(74, 222, 128, 0.4) !important;
+}
+
+/* ── Show/hide toggle ─────────────────────────────────── */
+.su-input-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--su-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color var(--su-transition);
+}
+
+.su-input-toggle:hover {
+  color: var(--su-text);
+}
+
+/* ── Password strength ────────────────────────────────── */
+.su-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.su-strength__bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.su-strength__bar {
+  flex: 1;
+  height: 3px;
+  background: var(--su-surface);
+  border-radius: 99px;
+  transition: background 0.25s ease;
+}
+
+.su-strength__bar--weak   { background: #f87171; }
+.su-strength__bar--fair   { background: #fb923c; }
+.su-strength__bar--good   { background: #facc15; }
+.su-strength__bar--strong { background: #4ade80; }
+
+.su-strength__label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+.su-strength__label--weak   { color: #f87171; }
+.su-strength__label--fair   { color: #fb923c; }
+.su-strength__label--good   { color: #facc15; }
+.su-strength__label--strong { color: #4ade80; }
+
+/* ── Error / Success banners ──────────────────────────── */
+.su-error,
+.su-success {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 10px 13px;
+  border-radius: var(--su-radius-sm);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.su-error {
+  background: var(--su-error-bg);
+  border: 1px solid rgba(248, 113, 113, 0.18);
+  color: var(--su-error);
+}
+
+.su-success {
+  background: var(--su-success-bg);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  color: var(--su-success);
+}
+
+/* ── Submit button ────────────────────────────────────── */
+.su-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  margin-top: 4px;
+  background: var(--su-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--su-radius-sm);
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: var(--su-font);
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background var(--su-transition), box-shadow var(--su-transition), transform 0.12s ease;
+}
+
+.su-btn:hover:not(:disabled) {
+  background: var(--su-accent-hover);
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.32);
+}
+
+.su-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.su-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ──────────────────────────────────────────── */
+.su-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: su-spin 0.65s linear infinite;
+}
+
+@keyframes su-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.su-footer {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--su-muted);
+}
+
+.su-footer__link {
+  color: var(--su-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--su-transition);
+}
+
+.su-footer__link:hover {
+  color: var(--su-accent-hover);
+  text-decoration: underline;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .su-card {
+    padding: 28px 20px;
+    border-radius: var(--su-radius-md);
+  }
+}

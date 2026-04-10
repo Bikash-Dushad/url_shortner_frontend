@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = ({ isAuthenticated, userName, profile, onLogout }) => {
+const Navbar = ({ isAuthenticated, userName = "noby", profile, onLogout }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);

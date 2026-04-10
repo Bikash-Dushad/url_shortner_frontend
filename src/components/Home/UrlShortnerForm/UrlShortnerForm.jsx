@@ -77,12 +77,12 @@ const UrlShortnerForm = ({ isAuthenticated }) => {
         <div className="result-box">
           <p className="result-label">Short URL:</p>
           <a
-            href={`${import.meta.env.VITE_REACT_APP_BASE_URL}${shortUrl}`}
+            href={`${import.meta.env.VITE_REACT_APP_BASE_URL}/${shortUrl}`}
             target="_blank"
             rel="noreferrer"
             className="result-link"
           >
-            {import.meta.env.VITE_REACT_APP_BASE_URL}
+            {import.meta.env.VITE_REACT_APP_BASE_URL}/
             {shortUrl}
           </a>
         </div>
