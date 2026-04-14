@@ -25,8 +25,8 @@ const UrlShortnerForm = ({ isAuthenticated }) => {
         longUrl,
         customName: customName || "",
       };
-
       const response = await postData("/short-url", payload);
+      console.log(response)
       if (response?.responseCode === 200) {
         setShortUrl(response.data.shortUrl);
         if (!isAuthenticated) {
@@ -39,6 +39,7 @@ const UrlShortnerForm = ({ isAuthenticated }) => {
         setCustomName("");
       }
     } catch (err) {
+      console.log(err);
       setError(err.data);
     } finally {
       setLoading(false);
@@ -82,8 +83,7 @@ const UrlShortnerForm = ({ isAuthenticated }) => {
             rel="noreferrer"
             className="result-link"
           >
-            {import.meta.env.VITE_REACT_APP_BASE_URL}/
-            {shortUrl}
+            {import.meta.env.VITE_REACT_APP_BASE_URL}/{shortUrl}
           </a>
         </div>
       )}

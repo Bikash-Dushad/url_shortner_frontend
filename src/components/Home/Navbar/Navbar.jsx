@@ -56,7 +56,7 @@ const Navbar = ({ isAuthenticated, userName = "noby", profile, onLogout }) => {
           {isAuthenticated ? (
             <>
               <Link
-                to="/dashboard"
+                to="/myurls"
                 className={`navbar__link${location.pathname === "/dashboard" ? " navbar__link--active" : ""}`}
               >
                 My URLs

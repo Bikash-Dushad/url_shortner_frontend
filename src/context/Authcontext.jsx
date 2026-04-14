@@ -19,9 +19,9 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const logout = () => {
-  localStorage.removeItem("Urlshortnertoken");
-  setToken(null);
-};
+    localStorage.removeItem("Urlshortnertoken");
+    setToken(null);
+  };
 
   const value = {
     token,

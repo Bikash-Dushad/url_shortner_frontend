@@ -79,10 +79,10 @@ const Signup = () => {
         setAvatarPreview(null);
         setTimeout(() => navigate("/"), 1800);
       } else {
-        setError(response?.message || "Signup failed. Please try again.");
+        setError(response?.error || "Signup failed. Please try again.");
       }
     } catch (err) {
-      setError(err?.message || "Something went wrong. Please try again.");
+      setError(err?.error || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
