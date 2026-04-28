@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { fetchData } from "../../../api/apiService";
-import "./MyUrls.css";
+import "./Myurls.css";
 import { AuthContext } from "../../../context/Authcontext";
 const MyUrls = () => {
   const [urls, setUrls] = useState([]);
