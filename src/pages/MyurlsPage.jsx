@@ -1,15 +1,19 @@
 import React from "react";
-import MyUrls from "../components/Home/MyUrls/MyUrls";
+import MyUrls from "../components/Home/Myurls/Myurls";
 import Navbar from "../components/Home/Navbar/Navbar";
 import { AuthContext } from "../context/Authcontext";
 import { useContext } from "react";
 
 const MyurlsPage = () => {
-  const { isAuthenticated } = useContext(AuthContext);
-
+  const { isAuthenticated, logout, userDetails, profileLoading } =
+    useContext(AuthContext);
   return (
     <div>
-      <Navbar isAuthenticated={isAuthenticated} />
+      <Navbar
+        isAuthenticated={isAuthenticated}
+        logout={logout}
+        userName={userDetails?.name}
+      />
       <MyUrls />
     </div>
   );

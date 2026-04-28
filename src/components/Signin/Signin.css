@@ -1,0 +1,84 @@
+.si-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0f0e0d;
+  font-family: "DM Sans", sans-serif;
+}
+
+.si-card {
+  width: 100%;
+  max-width: 380px;
+  background: #161513;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.si-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.si-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.si-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.si-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1e1c1a;
+  color: #fff;
+}
+
+.si-password {
+  display: flex;
+  gap: 5px;
+}
+
+.si-toggle {
+  background: transparent;
+  border: none;
+  color: #ff6b00;
+  cursor: pointer;
+}
+
+.si-btn {
+  padding: 10px;
+  background: #ff6b00;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.si-btn:disabled {
+  opacity: 0.6;
+}
+
+.si-error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.si-footer {
+  margin-top: 15px;
+  text-align: center;
+  color: #aaa;
+}
+
+.si-footer a {
+  color: #ff6b00;
+  text-decoration: none;
+}

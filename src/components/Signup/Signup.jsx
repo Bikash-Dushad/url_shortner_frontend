@@ -72,7 +72,6 @@ const Signup = () => {
       if (response?.responseCode === 200) {
         setSuccess("Account created! Redirecting…");
         localStorage.removeItem("shortUrls");
-        console.log(response.data);
         localStorage.setItem("Urlshortnertoken", response.data);
         setToken(response.data);
         setForm(INITIAL_FORM);

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = ({ isAuthenticated, userName = "noby", profile, onLogout }) => {
+const Navbar = ({ isAuthenticated, userName = "noby", profile, logout }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -93,15 +93,8 @@ const Navbar = ({ isAuthenticated, userName = "noby", profile, onLogout }) => {
                       <span className="navbar__dropdown-name">{userName}</span>
                     </div>
                     <div className="navbar__dropdown-divider" />
-                    <Link to="/dashboard" className="navbar__dropdown-item" role="menuitem">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-                        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-                      </svg>
-                      Dashboard
-                    </Link>
                     <div className="navbar__dropdown-divider" />
-                    <button className="navbar__dropdown-item navbar__dropdown-item--danger" onClick={onLogout} role="menuitem">
+                    <button className="navbar__dropdown-item navbar__dropdown-item--danger" onClick={logout} role="menuitem">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
                         <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
@@ -144,8 +137,7 @@ const Navbar = ({ isAuthenticated, userName = "noby", profile, onLogout }) => {
                 )}
                 <span>{userName}</span>
               </div>
-              <Link to="/dashboard" className="navbar__mobile-link">Dashboard</Link>
-              <button className="navbar__mobile-logout" onClick={onLogout}>Sign out</button>
+              <button className="navbar__mobile-logout" onClick={logout}>Sign out</button>
             </>
           ) : (
             <>
